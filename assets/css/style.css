@@ -1,6 +1,10 @@
+body {
+    background-color: gainsboro;
+}
+
 #quiz h1 {
     background-color: #41B3A3;
 }
 #mainDesc {
-    background-color: gainsboro;
+    background-color: white;
 }
