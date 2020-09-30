@@ -4,7 +4,10 @@ const quizContainer = document.querySelector("#quiz");
 const startQuiz = document.querySelector("#begin");
 const timerEl = document.querySelector("#timer");
 const quest = document.querySelector("#question");
-const answ = document.querySelector("#answer");
+const choiceA = document.querySelector("#a");
+const choiceB = document.querySelector("#b");
+const choiceC = document.querySelector("#c");
+const choiceD = document.querySelector("#d");
 
 // Questions, Answers, and Global Variables
 const quizQuestions = [
@@ -72,41 +75,23 @@ const renderTimer = () => {
   count--;
   timerEl.textContent = `Timer: ${count}`;
 }
-// const timerInterval = 
 const beginQuiz = () => {
   timer = setInterval(renderTimer, 1000);
-  
+}
 
-  // var timerInterval = setInterval(function () {
-  //   count--;
-  //   timerEl.textContent = `Timer: ${count}`;
-  // }, 1000);
-};
+const renderQuestion = () => {
+  quest.innerHTML = "<p>"+ quizQuestions[0].question +"</p>";
+  choiceA.innerHTML = "<button type='radio'>"+ quizQuestions[0].answers.a +"</button>";
+  choiceB.innerHTML = "<button type='radio'>"+ quizQuestions[0].answers.b +"</button>";
+  choiceC.innerHTML = "<button type='radio'>"+ quizQuestions[0].answers.c +"</button>";
+  choiceD.innerHTML = "<button type='radio'>"+ quizQuestions[0].answers.d +"</button>";
+}
 
-// const createButtons = () => {
-// //   var radioBtn = document.createElement
-// // }
-
-// const renderQuestion = () => {
-//   answ.textContent = "";
-//   // var radioBtn = document.createElement("button");
-//   // radioBtn.setAttribute("type", "radio");
-//   // radioBtn.textContent = quizQuestions[0].answers.a;
-
-//   // answ.appendChild(radioBtn);
-  
-//   // for (var i = 0; i < quizQuestions[i]; i++) {
-//   //   var qAndA = quizQuestions[i].question;
-//   //   quest.textContent = qAndA;
-//   //   console.log(qAndA);
-//   // }
- 
-// }
 
 // OnClick
 startQuiz.onclick = function () {
   welcomeContainer.style.display = "none";
-  // renderQuestion();
+  renderQuestion();
   quizContainer.style.display = "block";
   renderTimer();
   timer = setInterval(renderTimer,1000);
