@@ -1,4 +1,5 @@
-// Location Variables
+// Select Elements
+const welcomeContainer = document.querySelector("#welcome");
 const quizContainer = document.querySelector("#quiz");
 const startQuiz = document.querySelector("#begin");
 const timerEl = document.querySelector("#timer");
@@ -58,20 +59,56 @@ const quizQuestions = [
         correctAnswer: "d"
     },
 ]
-// console.log(quizQuestions);
-let count = 100;
+console.log(quizQuestions[0].question);
+console.log(quizQuestions[0].answers.a);
+console.log(quizQuestions[0].correctAnswer);
+// Variables
+let count = 90;
+let score = 0;
+let timer;
 
 // Functions
+const renderTimer = () => {
+  count--;
+  timerEl.textContent = `Timer: ${count}`;
+}
+// const timerInterval = 
 const beginQuiz = () => {
-  var timerInterval = setInterval(function () {
-    count--;
-    timerEl.textContent = `Timer: ${count}`;
-  }, 1000);
-  quest.textContent = questions[0];
-  answ.textContent = answers[0];
+  timer = setInterval(renderTimer, 1000);
+  
+
+  // var timerInterval = setInterval(function () {
+  //   count--;
+  //   timerEl.textContent = `Timer: ${count}`;
+  // }, 1000);
 };
+
+// const createButtons = () => {
+// //   var radioBtn = document.createElement
+// // }
+
+// const renderQuestion = () => {
+//   answ.textContent = "";
+//   // var radioBtn = document.createElement("button");
+//   // radioBtn.setAttribute("type", "radio");
+//   // radioBtn.textContent = quizQuestions[0].answers.a;
+
+//   // answ.appendChild(radioBtn);
+  
+//   // for (var i = 0; i < quizQuestions[i]; i++) {
+//   //   var qAndA = quizQuestions[i].question;
+//   //   quest.textContent = qAndA;
+//   //   console.log(qAndA);
+//   // }
+ 
+// }
 
 // OnClick
 startQuiz.onclick = function () {
-  beginQuiz();
+  welcomeContainer.style.display = "none";
+  // renderQuestion();
+  quizContainer.style.display = "block";
+  renderTimer();
+  timer = setInterval(renderTimer,1000);
+  
 };
