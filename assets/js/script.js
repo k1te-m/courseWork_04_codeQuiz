@@ -91,13 +91,16 @@ const beginQuiz = () => {
 
 function checkAnswer() {
   buttonSec.addEventListener("click", function(event) {
-    if (event.target.tagName === "BUTTON" && event.target.id === quizQuestions[0].correctAnswer) {
+    if (event.target.tagName === "BUTTON" && event.target.id === quizQuestions[currentQuestion].correctAnswer) {
       alert("Correct!");
       count += 10;
       currentQuestion+=1;
+      score += 1000;
       console.log(currentQuestion);
-      nextQuestion(currentQuestion);
-    }
+      if (currentQuestion <= 4) {
+        nextQuestion(currentQuestion);
+      }
+    } 
   })
 }
 
@@ -113,7 +116,6 @@ function nextQuestion() {
 }
 
 function renderQuestion() { // renders the next question to the question container
-  // for (i = 0; i < quizQuestions.length; i++) {
     let i = currentQuestion;
     quest.innerHTML = "<p>"+ quizQuestions[i].question +"</p>";
     buttonA.textContent = quizQuestions[i].answers.a;
