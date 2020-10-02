@@ -151,8 +151,8 @@ function renderQuestion() {
 function quizCompleted() {
   //Following the last question, user is alerted and taken to the highscores page, score is stored to local storage
   localStorage.setItem("score", allScores);
-  alert("Thank you for taking the quiz!");
-  window.location.open = "./pages/highscores.html";
+  alert("Thank you for taking the quiz! Please log your score on the High Scores page in the upper lefthand corner!");
+  // window.location.open = "./pages/highscores.html"; cannot get working properly on gitpages
 }
 
 function pushScore() {
