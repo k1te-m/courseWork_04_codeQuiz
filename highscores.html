@@ -13,7 +13,24 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <script src="./assets/js/script.js"></script>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="highscores.html">View HighScores</a>
+    </nav>
+    <div class="container">
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name">
+        </div>
+        <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
+      </form>
+    </div>
+    <section id="highscoreBrd">
+      <div id="name1"></div>
+    </section>
+
+
+    <script src="./assets/js/hsscript.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
