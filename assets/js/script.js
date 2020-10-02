@@ -13,15 +13,7 @@
   const buttonD = document.querySelector("#d");
   const scoreDisp = document.querySelector("#score");
   const buttonSec = document.querySelector("#buttons");
-  const nameEl = document.getElementById("name");
-  const subBtn = document.getElementById("submit-btn");
-  const hsBrd = document.getElementById("highscoreBrd");
-  const userN = document.getElementById("user-name");
-  const userS = document.getElementById("user-score");
-  const h5ElN = document.createElement("h5");
-  h5ElN.id = "user1";
-  const h5ElS = document.createElement("h5");
-  h5ElS.id = "score1";
+ 
  
   // Questions, Answers, and Global Variables
   const quizQuestions = [
@@ -87,7 +79,7 @@
   var allUserNames = [];
 
    //Local Storage Declarations
-   localStorage.setItem("score", allScores);
+   
    localStorage.setItem("name", allUserNames);
 
   // Functions
@@ -120,7 +112,7 @@
         if (currentQuestion <= 4) {
           nextQuestion(currentQuestion);
         } else {
-          // pushScore();
+          pushScore();
           quizCompleted();
         }
       } else if (
@@ -162,14 +154,14 @@
 
   function quizCompleted() {
     //Following the last question, user is alerted and taken to the highscores page, score is stored to local storage
+    localStorage.setItem("score", allScores);
     alert("Thank you for taking the quiz!");
-    window.location.href = "./assets/highscores.html";
+    window.location.href = "./highscores.html";
   }
   
-  // function pushScore() {
-    
-  //   allScores.push(score);
-  // }
+  function pushScore() { 
+    JSON.stringify(allScores.push(score));
+  }
 
   // function pushNames() {
   //   allUserNames.push(nameEl.value);
