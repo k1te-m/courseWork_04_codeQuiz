@@ -152,7 +152,7 @@ function quizCompleted() {
   //Following the last question, user is alerted and taken to the highscores page, score is stored to local storage
   localStorage.setItem("score", allScores);
   alert("Thank you for taking the quiz!");
-  window.location.href = "./highscores.html";
+  window.location.href = "./pages/highscores.html";
 }
 
 function pushScore() {
