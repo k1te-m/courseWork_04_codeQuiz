@@ -1,7 +1,6 @@
 // To Implement
 // Logging/Storing usernames and scores
 
-window.onload = function () {
   // Select Elements
   const welcomeContainer = document.querySelector("#welcome");
   const quizContainer = document.querySelector("#quiz");
@@ -14,7 +13,16 @@ window.onload = function () {
   const buttonD = document.querySelector("#d");
   const scoreDisp = document.querySelector("#score");
   const buttonSec = document.querySelector("#buttons");
-
+  const nameEl = document.getElementById("name");
+  const subBtn = document.getElementById("submit-btn");
+  const hsBrd = document.getElementById("highscoreBrd");
+  const userN = document.getElementById("user-name");
+  const userS = document.getElementById("user-score");
+  const h5ElN = document.createElement("h5");
+  h5ElN.id = "user1";
+  const h5ElS = document.createElement("h5");
+  h5ElS.id = "score1";
+ 
   // Questions, Answers, and Global Variables
   const quizQuestions = [
     {
@@ -76,7 +84,11 @@ window.onload = function () {
   let currentQuestion = 0;
   let timer;
   var allScores = [];
-  
+  var allUserNames = [];
+
+   //Local Storage Declarations
+   localStorage.setItem("score", allScores);
+   localStorage.setItem("name", allUserNames);
 
   // Functions
   const renderTimer = () => {
@@ -108,7 +120,7 @@ window.onload = function () {
         if (currentQuestion <= 4) {
           nextQuestion(currentQuestion);
         } else {
-          pushScore();
+          // pushScore();
           quizCompleted();
         }
       } else if (
@@ -118,7 +130,7 @@ window.onload = function () {
         alert("Incorrect!");
         console.log(event.target.id);
         count -= 10;
-        score -= 1250;
+        score -= 1000;
       }
     });
   }
@@ -150,16 +162,21 @@ window.onload = function () {
 
   function quizCompleted() {
     //Following the last question, user is alerted and taken to the highscores page, score is stored to local storage
-    localStorage.setItem("score", parseInt(allScores));
     alert("Thank you for taking the quiz!");
-    window.location.href = "./highscores.html";
-  
-    // localStorage.setItem("score", score);
+    window.location.href = "./assets/highscores.html";
   }
   
-  function pushScore() {
-    allScores.push(score);
-  }
+  // function pushScore() {
+    
+  //   allScores.push(score);
+  // }
+
+  // function pushNames() {
+  //   allUserNames.push(nameEl.value);
+  // }
+
+ 
+
 
   // }
 
@@ -170,5 +187,14 @@ window.onload = function () {
     renderQuestion();
     renderTimer();
     beginQuiz();
-  });
-};
+  } 
+  );
+  
+//   subBtn.addEventListener("click", function() {
+//   localStorage.setItem("name", nameEl.value);
+//   appendName();
+//   appendScore();
+//   event.preventDefault();
+// })
+
+
