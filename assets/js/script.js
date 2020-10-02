@@ -1,6 +1,4 @@
   // To Implement
-  // Alert Score and Timer decrement on incorrect answer
-  // Game Over Conditions
   // Logging/Storing usernames and scores
 
 window.onload = function(){
@@ -81,7 +79,7 @@ window.onload = function(){
   // console.log(quizQuestions[0].correctAnswer);
 
   // Variables
-  let count = 60;
+  let count = 40;
   let score = 0;
   let currentQuestion = 0;
   let timer;
@@ -90,6 +88,10 @@ window.onload = function(){
   const renderTimer = () =>  { // Decrements the timer and populates
     count--;
     timerEl.textContent = `Timer: ${count}`;
+    if (count == 0) {
+      alert("Time expired! Try again!")
+      window.location.href = "./index.html";
+    }
   }
   const beginQuiz = () => {
     timer = setInterval(renderTimer, 1000);
@@ -97,7 +99,7 @@ window.onload = function(){
 
   function checkAnswer() { // checks the target id of user click event and checks it against the current question correct answer
     buttonSec.addEventListener("click", function(event) {
-      if (event.target.tagName === "BUTTON" && event.target.id === quizQuestions[currentQuestion].correctAnswer) {
+      if (event.target.tagName === "BUTTON" && event.target.id == quizQuestions[currentQuestion].correctAnswer) {
         alert("Correct!");
         count += 10;
         currentQuestion+=1;
@@ -108,7 +110,12 @@ window.onload = function(){
         } else {
           quizCompleted();
         } 
-      } 
+      } else if (event.target.id != quizQuestions[currentQuestion] && event.target.tagName === "BUTTON") {
+        alert("Incorrect!");
+        console.log(event.target.id);
+        count -= 10;
+        score -= 1250;
+      }
     })
   }
 
@@ -139,7 +146,6 @@ window.onload = function(){
     window.location.href = "./highscores.html";
     localStorage.setItem("score", score);
   };
-
 
 
 
