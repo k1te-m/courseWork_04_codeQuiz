@@ -14,7 +14,12 @@
   </head>
   <body>
     <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="./pages/highscores.html" onclick="window.open('./pages/highscores.html');">View HighScores</a>
+      <a
+        class="navbar-brand"
+        href="./pages/highscores.html"
+        onclick="window.open('./pages/highscores.html');"
+        >View HighScores</a
+      >
       <div class="inline-div" id="timer"></div>
     </nav>
 
@@ -25,11 +30,15 @@
             Welcome to the MLB Trivia Quiz!
           </h1>
           <div class="pt-0 mt-0 p-2" id="quiz-desc">
-            This quiz is designed to test some basic knowledge of MLB history and records. The quiz begins with a timer of 90 seconds. For each correct answer
-            the timer will increase by 10 seconds. However, for each incorrect
-            answer the timer will decrease by 10 seconds. Each correct answer will increase your score by 100 points, while incorrect answers will decrease your score. Bonus points will be awarded for extra time left. Good luck!
+            This quiz is designed to test some basic knowledge of MLB history
+            and records. The quiz begins with a timer of 90 seconds. For each
+            correct answer the timer will increase by 10 seconds. However, for
+            each incorrect answer the timer will decrease by 10 seconds. Each
+            correct answer will increase your score by 100 points, while
+            incorrect answers will decrease your score. Bonus points will be
+            awarded for extra time left. Good luck!
           </div>
-          <br>
+          <br />
           <button id="begin">Begin Quiz!</button>
         </div>
       </div>
@@ -39,24 +48,24 @@
       <div class="row">
         <div class="col p-0">
           <h1 class="border-bottom border-dark p-2 pt-3" id="question">Test</h1>
-            <section id="buttons">
-              <div class="choice pt-0 mt-0 p-2" id="choiceA">
-                <button class="choice" id="a"></button>
-              </div>
-              <div class="choice pt-0 mt-0 p-2" id="choiceB">
-                <button class="choice" id="b"></button>
-              </div>
-              <div class="choice pt-0 mt-0 p-2" id="choiceC">
-                <button class="choice" id="c"></button>
-              </div>
-              <div class="choice pt-0 mt-0 p-2" id="choiceD">
-                <button class="choice" id="d"></button>
-              </div>
-            </section>                                
+          <section id="buttons">
+            <div class="choice pt-0 mt-0 p-2" id="choiceA">
+              <button class="choice" id="a"></button>
+            </div>
+            <div class="choice pt-0 mt-0 p-2" id="choiceB">
+              <button class="choice" id="b"></button>
+            </div>
+            <div class="choice pt-0 mt-0 p-2" id="choiceC">
+              <button class="choice" id="c"></button>
+            </div>
+            <div class="choice pt-0 mt-0 p-2" id="choiceD">
+              <button class="choice" id="d"></button>
+            </div>
+          </section>
           <div class="pt-0 mt-0 p-2" id="score"></div>
         </div>
       </div>
-    </div>  
+    </div>
 
     <script src="./assets/js/script.js"></script>
     <script
