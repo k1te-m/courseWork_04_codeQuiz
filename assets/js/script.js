@@ -87,7 +87,7 @@
     // Decrements the timer and populates
     count--;
     timerEl.textContent = `Timer: ${count}`;
-    if (count < 0) {
+    if (count <= 0) {
       alert("Time expired! Try again!");
       window.location.href = "./index.html";
     }
@@ -108,7 +108,6 @@
         count += 10;
         currentQuestion += 1;
         score += 1000;
-        console.log(currentQuestion);
         if (currentQuestion <= 4) {
           nextQuestion(currentQuestion);
         } else {
@@ -120,7 +119,6 @@
         event.target.tagName === "BUTTON"
       ) {
         alert("Incorrect!");
-        console.log(event.target.id);
         count -= 10;
         score -= 1000;
       }
@@ -163,30 +161,20 @@
     JSON.stringify(allScores.push(score));
   }
 
-  // function pushNames() {
-  //   allUserNames.push(nameEl.value);
-  // }
 
  
 
 
-  // }
+
 
   startQuiz.addEventListener("click", function () {
     // event listener for the begin quiz click that renders initial question/timer
     welcomeContainer.style.display = "none";
     quizContainer.style.display = "block";
     renderQuestion();
-    renderTimer();
     beginQuiz();
   } 
   );
-  
-//   subBtn.addEventListener("click", function() {
-//   localStorage.setItem("name", nameEl.value);
-//   appendName();
-//   appendScore();
-//   event.preventDefault();
-// })
+
 
 
