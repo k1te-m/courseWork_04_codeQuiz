@@ -22,3 +22,9 @@ body {
   display: block;
   margin-bottom: 10px;
 }
+#highscoreBrd h1 {
+  background-color: #41b3a3;
+}
+#highscoreBrd {
+  background-color: white;
+}

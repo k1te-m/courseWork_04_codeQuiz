@@ -137,6 +137,7 @@ window.onload = function(){
   function quizCompleted() {
     alert("Thank you for taking the quiz!")
     window.location.href = "./highscores.html";
+    localStorage.setItem("score", score);
   };
 
 

@@ -14,21 +14,37 @@
   </head>
   <body>
     <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="highscores.html">View HighScores</a>
+      <a class="navbar-brand" href="index.html">Home</a>
     </nav>
     <div class="container">
       <form>
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name">
+          <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter name">
         </div>
         <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
       </form>
+      <br>
+      <br>
+      <br>
+      <section id="highscoreBrd">
+        <h1 class="border-bottom border-dark pb-1">High Scores</h1>
+        <div class="row">
+          <div class="col">
+            <div>
+              <h4 class="border-bottom border-dark">Name</h4>
+              <h5 id="user-name"></h5>
+            </div>
+          </div>
+          <div class="col">
+            <div>
+              <h4 class="border-bottom border-dark">Score</h4>
+              <h5 id="user-score"></h5>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-    <section id="highscoreBrd">
-      <div id="name1"></div>
-    </section>
-
 
     <script src="./assets/js/hsscript.js"></script>
     <script
